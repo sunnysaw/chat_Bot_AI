@@ -23,7 +23,7 @@ app.use(
 );
 
 // ✅ Ensure OPTIONS preflight always works
-app.options("*", cors());
+// app.options("*", cors());
 app.use(router);
 
 app.get("/", (req, res) => {
@@ -35,3 +35,4 @@ app.get("/", (req, res) => {
 // });
 
 export default app
+// https://chat-bot-ai-b4to.vercel.app/
