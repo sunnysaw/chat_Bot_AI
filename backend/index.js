@@ -16,11 +16,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
 app.use(
   cors({
-    origin: ["https://chat-bot-ai-b4to.vercel.app"],
-    methods: ["GET", "POST"],
+    origin: ["https://chat-bot-ai-b4to.vercel.app"], // frontend domain
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })
 );
+
+// ✅ Ensure OPTIONS preflight always works
+app.options("*", cors());
 app.use(router);
 
 app.get("/", (req, res) => {
