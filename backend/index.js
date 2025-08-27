@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
 app.use(
   cors({
-    origin: "*",
+    origin: ['https://chat-bot-ai-b4to.vercel.app/'],
   })
 );
 app.use(router);
